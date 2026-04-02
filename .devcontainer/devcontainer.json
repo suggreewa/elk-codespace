@@ -1,0 +1,32 @@
+{
+  "name": "ELK Stack Dev Environment",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  "forwardPorts": [9200, 5601, 5044, 9600],
+  "portsAttributes": {
+    "9200": { "label": "Elasticsearch", "onAutoForward": "notify" },
+    "5601": { "label": "Kibana Dashboard", "onAutoForward": "openBrowser" },
+    "5044": { "label": "Logstash Beats Input", "onAutoForward": "silent" },
+    "9600": { "label": "Logstash Monitoring", "onAutoForward": "silent" }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "humao.rest-client"
+      ]
+    }
+  },
+
+  "hostRequirements": {
+    "cpus": 4,
+    "memory": "16gb"
+  }
+}
