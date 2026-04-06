@@ -1,3 +1,6 @@
+# BOTSv1 data files (too large for git)
+data/bots-v1/*.json
+
 # Elasticsearch data
 esdata/
 

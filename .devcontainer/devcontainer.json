@@ -1,16 +1,15 @@
 {
-  "name": "ELK Stack Dev Environment",
+  "name": "ELK Stack - BOTSv1",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 
   "features": {
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
 
-  "forwardPorts": [9200, 5601, 5044, 9600],
+  "forwardPorts": [9200, 5601, 9600],
   "portsAttributes": {
     "9200": { "label": "Elasticsearch", "onAutoForward": "notify" },
     "5601": { "label": "Kibana Dashboard", "onAutoForward": "openBrowser" },
-    "5044": { "label": "Logstash Beats Input", "onAutoForward": "silent" },
     "9600": { "label": "Logstash Monitoring", "onAutoForward": "silent" }
   },
 
